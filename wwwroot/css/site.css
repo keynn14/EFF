@@ -1,0 +1,284 @@
+/* EJ FERNANDEZ FILMS - Minimalist, Centered & Elegant Gold & Black Theme */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg-dark: #070709;
+    --bg-card: rgba(18, 18, 22, 0.65);
+    --bg-card-hover: rgba(26, 26, 34, 0.9);
+    --gold-primary: #D4AF37;
+    --gold-light: #F7E7A9;
+    --gold-dark: #AA820A;
+    --gold-gradient: linear-gradient(135deg, #C5A059 0%, #FDF0A6 30%, #D4AF37 60%, #AA820A 100%);
+    --text-main: #F4F4F6;
+    --text-muted: #8E8E98;
+    --border-gold: rgba(212, 175, 55, 0.25);
+    --border-gold-hover: rgba(212, 175, 55, 0.65);
+    --radius-card: 14px;
+    --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.07) 0%, transparent 60%),
+        radial-gradient(circle at 50% 85%, rgba(15, 15, 20, 0.8) 0%, transparent 50%);
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.25rem;
+    overflow-x: hidden;
+}
+
+/* Main Centered Container */
+.profile-container {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header & Perfectly Centered Avatar */
+.profile-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Diamond Geometric Avatar Frame - Centered & Subtle Shimmer */
+.avatar-wrapper {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Subtle Golden Shimmer Aura Behind Profile Picture */
+.avatar-aura {
+    position: absolute;
+    width: 102px;
+    height: 102px;
+    border-radius: 18px;
+    transform: rotate(45deg);
+    background: var(--gold-gradient);
+    filter: blur(12px);
+    opacity: 0.35;
+    animation: auraBreath 4s ease-in-out infinite alternate;
+}
+
+@keyframes auraBreath {
+    0% {
+        opacity: 0.25;
+        transform: rotate(45deg) scale(0.96);
+    }
+    100% {
+        opacity: 0.5;
+        transform: rotate(45deg) scale(1.04);
+    }
+}
+
+.avatar-frame {
+    position: relative;
+    width: 102px;
+    height: 102px;
+    border-radius: 18px;
+    transform: rotate(45deg);
+    overflow: hidden;
+    border: 1.5px solid var(--gold-primary);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+    background: #000;
+    transition: var(--transition-smooth);
+}
+
+.avatar-wrapper:hover .avatar-frame {
+    border-color: var(--gold-light);
+    box-shadow: 0 0 28px rgba(212, 175, 55, 0.45);
+}
+
+.avatar-img {
+    width: 142%;
+    height: 142%;
+    object-fit: cover;
+    transform: rotate(-45deg) scale(1.1);
+    transition: var(--transition-smooth);
+}
+
+.avatar-wrapper:hover .avatar-img {
+    transform: rotate(-45deg) scale(1.18);
+}
+
+/* Brand Typography */
+.brand-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 0.45rem;
+    text-align: center;
+}
+
+.brand-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Social Links List */
+.social-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-radius: var(--radius-card);
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    animation: cardSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.social-card:nth-child(1) { animation-delay: 0.15s; }
+.social-card:nth-child(2) { animation-delay: 0.25s; }
+.social-card:nth-child(3) { animation-delay: 0.35s; }
+.social-card:nth-child(4) { animation-delay: 0.45s; }
+
+@keyframes cardSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-gold-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 22px rgba(212, 175, 55, 0.18);
+}
+
+.social-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.social-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--gold-primary);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    transition: var(--transition-smooth);
+}
+
+.social-card:hover .social-icon-wrapper {
+    background: var(--gold-primary);
+    color: #000;
+    transform: scale(1.08);
+}
+
+.social-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-title {
+    font-weight: 600;
+    font-size: 0.94rem;
+    color: var(--text-main);
+}
+
+.social-subtitle {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.social-arrow {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+}
+
+.social-card:hover .social-arrow {
+    color: var(--gold-light);
+    transform: translateX(4px);
+}
+
+/* Footer Copyright */
+.footer-text {
+    margin-top: 3.2rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.7;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+@media (max-width: 480px) {
+    .brand-title {
+        font-size: 1.4rem;
+    }
+    .profile-container {
+        padding: 1.5rem 0.5rem;
+    }
+}

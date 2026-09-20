@@ -1,0 +1,49 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJ FERNANDEZ FILMS</title>
+    <!-- FontAwesome & Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+</head>
+<body>
+
+    <!-- Main Profile Container -->
+    <main class="profile-container">
+
+        <!-- Profile Header -->
+        <header class="profile-header">
+            <!-- Diamond Avatar Frame (Centered with Subtle Golden Aura) -->
+            <div class="avatar-wrapper">
+                <div class="avatar-aura"></div>
+                <div class="avatar-frame">
+                    <img id="profile-img" src="~/images/ej_profile.jpg" alt="EJ FERNANDEZ FILMS Logo" class="avatar-img">
+                </div>
+            </div>
+
+            <!-- Brand Name & Title -->
+            <h1 class="brand-title" id="profile-name">EJ FERNANDEZ FILMS</h1>
+            <p class="brand-subtitle" id="profile-title">Filmmaker & Visual Storyteller</p>
+        </header>
+
+        <!-- Social Channels List -->
+        <div class="social-list" id="social-list-container">
+            <!-- Rendered via JS -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer-text">
+            &copy; 2026 EJ FERNANDEZ FILMS
+        </footer>
+    </main>
+
+    <!-- Configuration & Script -->
+    <script src="~/js/config.js" asp-append-version="true"></script>
+    <script src="~/js/profile.js" asp-append-version="true"></script>
+</body>
+</html>
